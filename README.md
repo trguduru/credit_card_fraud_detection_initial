@@ -43,6 +43,7 @@ This dataset has more than 1M rows and more than 20 features.To understand how e
 Here are some of interesting plots.
 
 ![](images/fraud_by_time.png)
+
 This plot tells that fraud transactions are happening over the night time.
 
 ![](images/fraud_distri_cat.png)
@@ -50,6 +51,7 @@ This plot tells that fraud transactions are happening over the night time.
 This distribution plot shows that high fraud is happening in internet transactions
 
 ![](images/fraud_vs_not.png)
+
 This plot shows that there are only 7506 fraud transactions in the dataset which has close to 1.3M records.
 
 #### Data Processing
