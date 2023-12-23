@@ -4,6 +4,24 @@
 Guduru, Thirupathi Reddy (https://github.com/trguduru)
 
 ### Executive summary
+For the credit card transaction prediction use case, i have used a simulation dataset from *kaggle* and the dataset has 0.5%  of fraud transactions.
+
+I have followed CRISP DM techniques to clean the data for training models. Check data processing and feature engineering for additional details.
+
+The models I have tried are 
+
+* LogisticRegression
+* KNN
+* DecisionTreeClassifier
+* SVM
+* GaussianNB
+* SGDClassifier
+
+Once trained these models, were evaluated for their performance using f1_score and balanced score of the sklearn metrics library to check for *true positive*.
+
+All these models performed very poorly on *true positive* predictions but *KNN* and *DecisionTreeClassifier* performed relatively better. Check the results section for details.
+
+As stated in the next steps of this README we need to further evaluate additional advanced models and pick a better model for this use case.
 
 ### Rationale
 The rationale for detecting fraud in a credit card transaction is to eliminate the dollar waste for a financial institution. And also build trust with its customers.
@@ -44,10 +62,20 @@ Evaluated the following models
 ### Results
 After training all these models using **GridSearchCV** with 5 folds here are the results for various models.
 
-![](images/log_reg_matrix.png) ![](images/sgd_matrix.png)
+None of these models are accurately predicting *true positive* classes.
+
+Here are some of the plots showing the confusion matrix of various models evaluated.
+
+![](images/log_reg_matrix.png) ![](images/sgd_matrix.png) ![](images/decision_tree_matrix.png)![](images/guassian_matrix.png) ![](images/knn_matrix.png)
+
+These plots show very low *true positive* predictions.
+
+And here is the plot that shows the f1_score and balanced score of these models.
+
+![](images/models_base_perf.png)
 
 ### Next steps
-Though the models have better classification scores the *true positive* prediction is very low which means these models classify every transaction as not a fraud which is not going to be very useful.
+The models exhibit higher classification scores, but the issue lies in a notably low true positive prediction, indicating a tendency to classify all transactions as non-fraudulent. To address this, we can enhance model accuracy through:
 
 Here are a few additional techniques and/or algorithms we can use to further improve the model accuracy.
 
