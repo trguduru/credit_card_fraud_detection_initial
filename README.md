@@ -40,7 +40,17 @@ I have used the following tools and techniques to classify whether a transaction
 #### Data Analysis
 This dataset has more than 1M rows and more than 20 features.To understand how each feature's data is and how they are related to each other have done the following analysis using various plots from *matplotlib* , *seaborn* and *plotly*.
 
-![Transaction Amount > 5000](images/card_amt_5000.png) ![Transaction Amount > 1000 and < 5000](images/card_amt_1000.png)
+Here are some of interesting plots.
+
+![](images/fraud_by_time.png)
+This plot tells that fraud transactions are happening over the night time.
+
+![](images/fraud_distri_cat.png)
+
+This distribution plot shows that high fraud is happening in internet transactions
+
+![](images/fraud_vs_not.png)
+This plot shows that there are only 7506 fraud transactions in the dataset which has close to 1.3M records.
 
 #### Data Processing
 * Cleaned some of the unnecessary columns like transaction number, merchant name, customer names etc, as these dont add any values in model evaluation.
@@ -49,6 +59,14 @@ This dataset has more than 1M rows and more than 20 features.To understand how e
 * Applied *JamesSteinEncoder* for encoding categorical data
 * Applied *StandardScaler* to scale the dependent features.
 * Split the data with a test split size of 30% data.
+
+Here are few plots in feature engineering.
+![](images/heatmap.png)
+This heatmap shows that positive and negative correlation between various features. It seems lat,long with merchant lat long has a high positive correlation. Amount and fraud are positive and transaction time and age are in negative correlation.
+
+![](images/feature_imp.png)
+This plot shows the important features in predicting whether a transaction is fraud or not.
+It shows the amount, transaction time, city etc ... are very important features.
 #### Model Evaluation
 Evaluated the following models
 * LogisticRegression
